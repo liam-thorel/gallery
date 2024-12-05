@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images Ringarde</title>
+    <style>
+        body {
+            background-color: lime;
+            background-image: 
+                linear-gradient(45deg, lime 25%, transparent 25%), 
+                linear-gradient(-45deg, cyan 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, lime 75%), 
+                linear-gradient(-45deg, transparent 75%, cyan 75%),
+                linear-gradient(45deg, yellow 12.5%, transparent 12.5%, transparent 37.5%, yellow 37.5%, yellow 62.5%, transparent 62.5%, transparent 87.5%, yellow 87.5%),
+                linear-gradient(-45deg, yellow 12.5%, transparent 12.5%, transparent 37.5%, yellow 37.5%, yellow 62.5%, transparent 62.5%, transparent 87.5%, yellow 87.5%);
+            background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 10px 10px, 10px 10px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px, 0 0, 0 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: magenta;
+            text-align: center;
+        }
+        h1 {
+            text-shadow: 2px 2px 5px yellow;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            border: 5px dotted red;
+            margin: 10px;
+            width: 400px;
+            height: 400px;
+            animation: move 3s infinite;
+        }
+        @keyframes move {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(15deg); }
+            50% { transform: translate(-20px, 20px) rotate(-15deg); }
+            75% { transform: translate(20px, 20px) rotate(15deg); }
+            100% { transform: translate(-20px, -20px) rotate(-15deg); }
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup h2 {
+            color: red;
+            font-size: 24px;
+        }
+        .popup p {
+            color: black;
+            font-size: 18px;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var popup = document.createElement('div');
+            popup.className = 'popup';
+            popup.innerHTML = `
+                <h2>Attention ! Virus détecté</h2>
+                <p>TOUS VOS FICHIERS ONT ÉTÉ REMPLACES PAR DES IMAGES DE CON</p>
+                <p>Votre ordinateur est infecté par un virus dangereux.</p>
+                <p>Ce virus peut voler vos informations personnelles et les envoyer à des pirates.</p>
+                <p>Il peut également endommager votre ordinateur et le rendre inutilisable.</p>
+                <p>Il est recommandé de supprimer ce virus dès que possible.</p>
+                <p>Si vous ne supprimez pas ce virus, vous risquez de perdre toutes vos données.</p>
+                <p>Il est possible que ce virus ait déjà volé vos informations personnelles.</p>
+                <p>Il est possible que ce virus ait déjà endommagé votre ordinateur.</p>
+                <p>Il est possible que ce virus ait déjà envoyé vos informations personnelles à des pirates.</p>
+                <p>Il est possible que ce virus ait déjà rendu votre ordinateur inutilisable.</p>
+                <p>Il est possible que ce virus ait déjà détruit toutes vos données.</p>
+                <p>Il est possible que ce virus ait déjà infecté d'autres ordinateurs sur votre réseau.</p>
+                <p>Il est possible que ce virus ait déjà infecté d'autres appareils connectés à votre réseau.</p>
+                <p>Il est possible que ce virus ait déjà infecté d'autres appareils connectés à votre ordinateur.</p>
+                <p>Il est possible que ce virus ait déjà infecté d'autres appareils connectés à votre téléphone.</p>
+                <p>Veuillez cliquer sur le bouton accéder aux restes.</p>
+                <button onclick="closePopup()">Voir la gallerie</button>
+            `;
+            document.body.appendChild(popup);
+        }
+        function closePopup() {
+            var popup = document.querySelector('.popup');
+            if (popup) {
+                popup.remove();
+            }
+            alert("Bienvenue à la Galerie d'Images C00L!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Bienvenue à la Galerie d'Images C00L!</h1>
+    <div class="gallery">
+        <img src="assets/black-dick.jfif" alt="Image 1">
+        <img src="assets/image.jpg" alt="Image 2">
+        <img src="assets/RACISMONO.jpg" alt="Image 3">
+        <img src="assets/homer.jpg" alt="Image 4">
+        <img src="assets/bob.jpg" alt="Image 5">
+        <img src="assets/ça nique.jpg" alt="Image 6">
+    </div>
+</body>
+</html>
